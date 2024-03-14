@@ -1,0 +1,65 @@
+/****** Slider ******/
+.carousel-inner, .carousel-item {
+  height: 100vh;
+}
+.carousel-item img {
+  height: 100%;
+  object-fit: cover;
+}
+.carousel-caption {
+  padding: 0 auto;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.carousel-indicators {
+  transform: scale(3);
+}
+/****** Producs ******/
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+} 
+/****** Promotions ******/
+.sticky-bottom {
+      position: absolute;
+  }
+/****** Informations ******/
+
+/****** Contact ******/
+.contact {
+  background-color: #eff2f5;
+}
+.contact  .card {
+  border: none;
+  background-color: inherit;
+}
+.contact ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 8px 0;
+  text-align: left;
+}
+.contact ul li {
+  display: inline-block;
+  margin: 0 8px 0 0;
+}
+.contact a {
+  font-size: 0;
+}
+.contact i {
+  font-size: 16px;
+  color: black;
+  padding: 0;
+}
+/****** Footer ******/
+.footer {
+  font-size: 1em;
+  background-color: rgb(204, 220, 232);
+}
+.footer a {
+  text-decoration: none;
+}
