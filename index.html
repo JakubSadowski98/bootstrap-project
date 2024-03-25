@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Bootstrap - first project</title> <!---->
+    <title>Bootstrap - first project</title> <!--dodanie tytułu na karcie strony-->
+    <link rel="icon" type="image/png" href="/images/favicon.png"> <!--dodanie ikonki na karcie strony-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--ustawienie responsywności dla strony-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"> <!--dodawanie Font Awesome-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> <!--dodawanie Bootstrapa do strony-->
-    <link rel="stylesheet" type="text/css" href="css/style.css"> <!--dodawanie arkusza stylów-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> <!--skrypt niezbędny do tego, by dynamiczne elementy strony funkcjonowały prawidłowo-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> <!--dodawanie Bootstrapa wersji 5.2.3 do strony-->
+    <link rel="stylesheet" type="text/css" href="css/style.css"> <!--dodawanie własnego arkusza stylów, który ewentualnie będzie nadpisywał bootstrapowe style-->
   </head>
   <body>
-    <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light"> <!--"navbar" - podstawowa klasa do tworzenia nawigacji, "navbar-expand-md" - nawigacja będzie widoczna w całości na ekranach o minimalnej szerokości 768px (od tabletów w górę); "fixed-top" - navbar będzie zawsze u góry ekranu; "navbar-light bg-light" - wybór kompozycji kolorystycznej-->
-      <a class="navbar-brand">HARBINGER</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobile-menu" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation"> <!--przycisk "hamburgera", który rozwija nawigację-->
-        <span class="navbar-toggler-icon"></span> <!--[data-bs-target] – wskazuje on, który element będzie pokazywany i ukrywany poprzez kliknięcie buttona na urządzeniach mobilnych-->
+    <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light"> <!--pasek nawigacji; "navbar" - podstawowa klasa do tworzenia nawigacji zawierająca zmienne, "navbar-expand-md" - nawigacja będzie widoczna w całości na ekranach o minimalnej szerokości 768px (od tabletów w górę); "fixed-top" - pasek nawigacji będzie zawsze u góry ekranu; "navbar-light bg-light" - wybór kompozycji kolorystycznej-->
+      <a class="navbar-brand" href="#/">HARBINGER</a> <!-- zakotwicza nazwę firmy w stałym miejscu na stronie -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobile-menu" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation"> <!--przycisk-hamburger, który rozwija nawigację na telefonach; [data-bs-toggle]="collapse" - rozwija inny element; [data-bs-target]=id – wskazuje, który element będzie rozwijany-->
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="mobile-menu"> <!--owinięcie w <div> elementów, które mająbyć ukryte przez <button>-"hamburger" na telefonach-->
-        <ul class="navbar-nav"> <!--rodzic menu drugiego poziomu-->
+      <div class="collapse navbar-collapse" id="mobile-menu"> <!--owinięcie elementów listy w <div>, który jest ukrywany na mobile; "collapse" - element jest zwijany/rozwijany-->
+        <ul class="navbar-nav"> <!--menu pierwszego poziomu-->
           <li class="dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Clothing</a>
+            <a class="nav-link dropdown-toggle" href="#/" data-bs-toggle="dropdown">Clothing</a> <!--[data-bs-toggle] - przycisk rozwijania menu-->
             <div class="dropdown-menu"> <!--menu drugiego poziomu-->
-              <a class="dropdown-item" href="#">Outfits</a>
-              <a class="dropdown-item" href="#">Tops</a>
-              <a class="dropdown-item" href="#">Bottoms</a>
+              <a class="dropdown-item" href="#/">Outfits</a>
+              <a class="dropdown-item" href="#/">Tops</a>
+              <a class="dropdown-item" href="#/">Bottoms</a>
             </div>
           </li>
           <li>
-            <a class="nav-link" href="#">Lingerie</a>
+            <a class="nav-link" href="#/">Lingerie</a>
           </li>
           <li>
-            <a class="nav-link" href="#">Shoes</a>
+            <a class="nav-link" href="#/">Shoes</a>
           </li>
           <li>
-            <a class="nav-link" href="#">Accessories</a>
+            <a class="nav-link" href="#/">Accessories</a>
           </li>
         </ul>
-        <div class="btn-group ms-auto" role="group" aria-label="Basic example">
+        <div class="btn-group ms-auto" role="group" aria-label="Basic example"> <!--"ms-auto" - lewy margines; [aria-label]-informuje przeglądarkę o zastosowanej wersji przycisków-->
           <button type="button" class="btn btn-secondary"><i class="fa-solid fa-cart-shopping"></i> Cart</button>
           <button type="button" class="btn btn-secondary"><i class="fa-solid fa-user"></i> Account</button>
         </div>
       </div>
     </nav>
-    <div id="main-slider" class="carousel slide" data-bs-ride="carousel">
-      <ol class="carousel-indicators">
+    <div id="main-slider" class="carousel slide" data-bs-ride="carousell"> <!-- id głównego wrapera karuzeli jest równe id elementów przełączających slajdy; [data-bs-ride]-automatyczne przewijane slajdów-->
+      <ol class="carousel-indicators"> <!-- poziome przyciski do szybkiego wyboru konkretnego slajdu -->
         <li data-bs-target="#main-slider" data-bs-slide-to="0" class="active"></li>
         <li data-bs-target="#main-slider" data-bs-slide-to="1"></li>
         <li data-bs-target="#main-slider" data-bs-slide-to="2"></li>
@@ -53,7 +53,7 @@
           <div class="carousel-caption">
             <h4>NEW ARRIVAL</h4>
             <h3>Nula maximus</h3>
-            <a class="btn btn-primary" href="#">Shop now</a>
+            <a class="btn btn-primary" href="#/">Shop now</a>
           </div>
         </div>
         <div class="carousel-item">
@@ -61,7 +61,7 @@
           <div class="carousel-caption">
             <h4>NEW ARRIVAL</h4>
             <h3>Nula mediumus</h3>
-            <a class="btn btn-primary" href="#">Shop now</a>
+            <a class="btn btn-primary" href="#/">Shop now</a>
           </div>
         </div>
         <div class="carousel-item">
@@ -69,11 +69,11 @@
           <div class="carousel-caption">
             <h4>NEW ARRIVAL</h4>
             <h3>Nula minimus</h3>
-            <a class="btn btn-primary" href="#">Shop now</a>
+            <a class="btn btn-primary" href="#/">Shop now</a>
           </div>
         </div>
       </div>
-      <div>
+      <div> <!-- strzałki służące do przewijania slajdów -->
         <button type="button" class="carousel-control-prev" href="#main-slider" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
@@ -85,29 +85,29 @@
       </div>
     </div>
     <section class="products py-5"> <!--"py-5" - pionowy padding o wartości 5-->
-      <div class="container"> <!--pierwszy wraper Bootstrapa-->
-        <div class="row">   <!--drugi wraper Bootstrapa-->
-          <div class="col-lg-3">
+      <div class="container"> <!--wraper regulujący szerokość wewnątrz niego-->
+        <div class="row">   <!--wraper będący rodzicem dla pudełek-kolumn-->
+          <div class="col-lg-3"> <!-- kolumna przechowująca listę marek -->
             <h2>Brands</h2>
-            <div class="list-group flex-sm-row flex-md-column"> <!--"list-group" - zamienia <div> w container flexboksowy, w którym elementy potomne ułożone są w kolumnie; "flex-sm-row" - ustawi elementy w rzędzie na szerokość sm-->
-              <a class="list-group-item list-group-item-action">Vivamus</a>
-              <a class="list-group-item list-group-item-action">Etiam</a>
-              <a class="list-group-item list-group-item-action">Praesent</a>
-              <a class="list-group-item list-group-item-action">Aenean</a>
-              <a class="list-group-item list-group-item-action">Vestibulum</a>
+            <div class="list-group flex-sm-row flex-lg-column"> <!--"list-group" - zamienia <div> w container flexboksowy, w którym elementy potomne ułożone są w kolumnie; "flex-sm-row" - ustawi elementy w rzędzie na szerokość sm-->
+              <a class="list-group-item list-group-item-action" href="#/">Vivamus</a>
+              <a class="list-group-item list-group-item-action" href="#/">Etiam</a>
+              <a class="list-group-item list-group-item-action" href="#/">Praesent</a>
+              <a class="list-group-item list-group-item-action" href="#/">Aenean</a>
+              <a class="list-group-item list-group-item-action" href="#/">Vestibulum</a>
             </div>
           </div>
-          <div class="col-lg-9">
+          <div class="col-lg-9"> <!-- kolumna przechowująca kafelki z produktami-zdjęciami  -->
             <h2>New arrivals</h2>
             <div class="row">
-              <div class="col-sm-6 col-lg-4">   <!--na najmniejszych ekranach: 4 karty jedna pod drugą, 100% szerokości-->
-                <div class="card">            <!--na szerokości sm i powyżej – cztery karty po dwie w rzędzie-->
-                  <div class="card-image">   <!--na szerokości lg i powyżej – trzy karty w rzędzie-->
+              <div class="col-sm-6 col-lg-4">   <!--na najmniejszych ekranach: po jednej karcie w rzędzie - jedna pod drugą, 100% szerokości-->
+                <div class="card">              <!--na szerokości sm i powyżej – po dwie karty w rzędzie-->
+                  <div class="card-image">      <!--na szerokości lg i powyżej – po trzy karty w rzędzie, jedna karta ukryta-->
                     <img src="https://i.postimg.cc/mrMvRkgd/4.jpg" alt="image">
                   </div>
                   <div class="card-body">
                     <h5>Phasellus</h5>
-                    <a class="btn btn-secondary">Add to cart</a>
+                    <a class="btn btn-secondary" href="#/">Add to cart</a>
                   </div>
                 </div>
               </div>
@@ -118,7 +118,7 @@
                   </div>
                   <div class="card-body">
                     <h5>Sed tincidunt</h5>
-                    <a class="btn btn-secondary">Add to cart</a>
+                    <a class="btn btn-secondary" href="#/">Add to cart</a>
                   </div>
                 </div>
               </div>
@@ -129,7 +129,7 @@
                   </div>
                   <div class="card-body">
                     <h5>Suspendisse</h5>
-                    <a class="btn btn-secondary">Add to cart</a>
+                    <a class="btn btn-secondary" href="#/">Add to cart</a>
                   </div>
                 </div>
               </div>
@@ -140,7 +140,7 @@
                   </div>
                   <div class="card-body">
                     <h5>Veticcos</h5>
-                    <a class="btn btn-secondary">Add to cart</a>
+                    <a class="btn btn-secondary" href="#/">Add to cart</a>
                   </div>
                 </div>
               </div>
@@ -153,29 +153,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="card mb-3 justify-content-center align-items-center">
+                    <div class="card mb-3 justify-content-center align-items-center"> <!-- "justify-content-center", "align-items-center" - wycentrowanie elementu-dziecka w obu osiach -->
                         <img src="https://i.postimg.cc/7YFPFDjm/8.jpg" alt="image">
-                        <div class="card-body sticky-bottom"> <!--"sticky-bottom" - w tej klasie nadajemy pozycję: absolute, dzięki której możemy przemieszczać <div> wewnątrz jego rodzica-->
+                        <div class="card-body position-absolute"> <!--"position-absolute" - nadanie pozycji absolute, dzięki której możemy przemieszczać <div> wewnątrz jego rodzica-->
                              <h5>Winter sale</h5>
-                             <a class="btn btn-primary">See deals</a>
+                             <a class="btn btn-primary" href="#/">See deals</a>
                          </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="card mb-3 justify-content-center align-items-center">
                         <img src="https://i.postimg.cc/XvJVFJ5N/9.jpg" alt="image">
-                        <div class="card-body sticky-bottom">
+                        <div class="card-body position-absolute">
                              <h5>Lookbook</h5>
-                             <a class="btn btn-primary">Get inspired</a>
+                             <a class="btn btn-primary" href="#/">Get inspired</a>
                          </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card mb-3 justify-content-center align-items-center">
                         <img src="https://i.postimg.cc/KjmpkKKJ/10.jpg" alt="image">
-                        <div class="card-body sticky-bottom">
+                        <div class="card-body position-absolute">
                              <h5>News and ideas</h5>
-                             <a class="btn btn-primary">Go to Harbinger blog</a>
+                             <a class="btn btn-primary" href="#/">Go to Harbinger blog</a>
                          </div>
                     </div>
                 </div>
@@ -188,7 +188,7 @@
                 <div class="col-md-4">  <!--na najmniejszych ekranach - 3 karty jedna pod drugą, 100% szerokości; na szerokości md i powyżej - 3 karty w rzędzie-->
                     <div class="card p-3 mb-3">
                         <div class="row">   <!--drugi (wewnętrzny) rząd elementów-->
-                            <div class="col-md-2 d-none d-md-block">  <!--element ma znikać poniżej szerokości md-->
+                            <div class="col-md-2 d-none d-md-block">  <!--"d-none" "d-md-block" - element-ikona pojawia się powyżej szerokości md-->
                                 <i class="fa-solid fa-truck pt-4 pl-3"></i>
                             </div>
                             <div class="col-md-10">
@@ -236,37 +236,37 @@
     <section class="contact">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-lg-4 order-md-1">
+                <div class="col-md-6 col-lg-4 order-lg-1">
                     <div class="card p-4 mb-3">
                         <h3>HARBINGER</h3>
                         <p>Lorem ipsum dolor sit amet</p>
                         <ul>
-                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i>Facebook</a></li>
-                            <li><a href="#"><i class="fa-brands fa-twitter"></i>Twitter</a></li>
-                            <li><a href="#"><i class="fa-brands fa-behance"></i>Behance</a></li>
-                            <li><a href="#"><i class="fa-brands fa-youtube"></i>You Tube</a></li>
+                            <li><a href="#/"><i class="fa-brands fa-facebook-f"></i>Facebook</a></li>
+                            <li><a href="#/"><i class="fa-brands fa-twitter"></i>Twitter</a></li>
+                            <li><a href="#/"><i class="fa-brands fa-behance"></i>Behance</a></li>
+                            <li><a href="#/"><i class="fa-brands fa-youtube"></i>You Tube</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 order-md-2">
+                <div class="col-md-6 col-lg-4 order-lg-2">
                     <div class="card p-4 mb-3">
                         <h3>Contact us</h3>
                         <p>2795 Cunningham Court<br>Rochester Hills 48306<br>Michigan</p>
-                        <a href="#">support@company.com</a>
+                        <a href="#/">support@company.com</a>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 d-md-none d-lg-block order-md-0">
+                <div class="col-md-6 col-lg-4 d-md-none d-lg-block order-lg-0"> <!-- element znika na tylko szerokości md; "order-lg-0" - element ustawi się jako pierwszy na szerokości lg -->
                     <div class="card p-4 mb-3">
                         <h3>Newsletter</h3>
                         <p>Lorem ipsum dolor sit amet</p>
                         <form>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                          </form>
+                          <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -274,21 +274,22 @@
     </section>
     <section class="footer pt-3">
         <div class="container">
-            <div class="row d-flex justify-content-between">
+            <div class="row d-flex justify-content-around"> <!-- elementy-dzieci są rozłożone równomiernie -->
                 <div class="col-md-4">
                     <p><i class="fa-regular fa-copyright"></i> Harbinger Ltd.</p>
                 </div>
                 <div class="col-md-6">
                     <ul class="list-inline">
-                        <li class="list-inline-item"><a href="#">About</a></li>
-                        <li class="list-inline-item"><a href="#">Delivery</a></li>
-                        <li class="list-inline-item"><a href="#">Returns</a></li>
-                        <li class="list-inline-item"><a href="#">Privacy policy</a></li>
-                        <li class="list-inline-item"><a href="#">Terms and conditions</a></li>
+                        <li class="list-inline-item"><a href="#/">About</a></li>
+                        <li class="list-inline-item"><a href="#/">Delivery</a></li>
+                        <li class="list-inline-item"><a href="#/">Returns</a></li>
+                        <li class="list-inline-item"><a href="#/">Privacy policy</a></li>
+                        <li class="list-inline-item"><a href="#/">Terms and conditions</a></li>
                       </ul>
                 </div>
             </div>
         </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> <!--skrypt niezbędny do tego, by dynamiczne elementy strony funkcjonowały prawidłowo-->
   </body>
 </html>
